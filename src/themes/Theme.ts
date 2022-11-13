@@ -5,6 +5,8 @@ const Theme = {
   },
   colors: {
     default: "#f3f3ef",
+    content_dark: "rgb(42, 37, 80)",
+    content_bright: "rgba(255, 255, 255)",
   },
 };
 

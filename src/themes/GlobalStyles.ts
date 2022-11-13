@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html, body, #root {
-    font-family: Sofiapro, sans-serif;
+    font-family: 'Playfair Display',serif;
     margin: 0;
 }
 
