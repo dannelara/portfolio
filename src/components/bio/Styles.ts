@@ -12,15 +12,17 @@ export const Container = styled.div<Props>`
       alignItems: "start",
       textAlign: "center",
       justifyContent: "center",
+      gap: 25,
       "@media screen and (max-width: 500px)": {
         padding: 10,
+        gap: 0,
       },
     }}
 
   ${(props) =>
     props.type === "content-small" && {
       height: "100%",
-      width: "50%",
+      width: "auto", // Change here
       display: "flex",
       alignItems: "center",
       textAlign: "center",

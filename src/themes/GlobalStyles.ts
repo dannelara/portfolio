@@ -12,6 +12,8 @@ const GlobalStyle = createGlobalStyle`
   html, body, #root {
     font-family: 'Playfair Display',serif;
     margin: 0;
+    color: black;
+
 }
 
 // ::-webkit-scrollbar {

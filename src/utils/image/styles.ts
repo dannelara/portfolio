@@ -22,7 +22,7 @@ export const Img = styled.img<Props>`
   ${(props) =>
     props.type === "hero" && {
       animation: "moveIn_img 1s forwards",
-      height: "80%",
+      height: "60%",
       maxWidth: "100%",
       minWidth: "50%",
       borderRadius: "100%",

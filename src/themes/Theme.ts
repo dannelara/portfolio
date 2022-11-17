@@ -4,9 +4,9 @@ const Theme = {
     background: "#FFFF",
   },
   colors: {
-    default: "#f3f3ef",
-    content_dark: "rgb(42, 37, 80)",
-    content_bright: "rgba(255, 255, 255)",
+    default: "white",
+    content_dark: "rgb(27, 27, 47, 0.3)",
+    content_bright: "rgba(255, 255, 255, 0.9)",
   },
 };
 

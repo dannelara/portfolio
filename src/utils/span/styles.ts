@@ -58,7 +58,7 @@ export const StyledSpan = styled.span<Props>`
       alignItems: "center",
       justifyContent: "center",
       // fontFamily: "Sofiapro, sans-serif",
-      color: "#535353",
+      // color: "#535353",
       fontSize: "20px",
       lineHeight: "1.34",
       fontWeight: 300,

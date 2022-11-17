@@ -2,6 +2,7 @@ import styled from "styled-components";
 interface Props {
   type: String;
   _color?: String;
+  hover_effect?: Boolean;
 }
 
 export const Container = styled.div<Props>`
@@ -25,40 +26,37 @@ export const Container = styled.div<Props>`
 
     ${(props) =>
     props.type === "content-flex" && {
-      "@media screen and (max-width: 900px)": {
-        flexWrap: "wrap",
-      },
       height: "inherit",
       width: "100%",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      gap: 10,
+
+      "@media screen and (max-width: 1050px)": {
+        flexWrap: "wrap",
+      },
     }}
 
     ${(props) =>
     props.type === "content" && {
-      transition: "0.4s",
-      ":hover": {
-        transform: "scale(105%)",
-        zIndex: 2,
-      },
+      // transition: "0.4s",
+      // ":hover": {
+      //   transform: props.hover_effect ? "scale(105%)" : "",
+      //   zIndex: 2,
+      // },
 
-      backgroundColor:
-        props._color === "dark"
-          ? props.theme.colors.content_dark
-          : props.theme.colors.content_bright,
+      // backgroundColor:
+      //   props._color === "dark" ? props.theme.colors.content_dark : "",
       height: "80%",
-      width: "48%",
+      width: "80%",
       borderRadius: 5,
-      "@media screen and (max-width: 900px)": {
-        width: "90%",
-        height: "45%",
+      "@media screen and (max-width: 1050px)": {
+        // width: "75%",
       },
 
       "@media screen and (max-width: 500px)": {
         height: "auto",
-        padding: 10,
+        minHeight: "25%",
       },
     }}
 `;

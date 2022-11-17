@@ -1,6 +1,7 @@
 import styled from "styled-components";
 interface Props {
   type: String;
+  _moveInEffect?: Boolean;
 }
 
 export const Container = styled.div<Props>`
@@ -8,6 +9,21 @@ export const Container = styled.div<Props>`
     props.type === "section-big" && {
       height: "100vh",
       width: "100%",
-      marginBottom: 5,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+
+  ${(props) =>
+    props.type === "section-auto" && {
+      minHeight: "100vh",
+      width: "100%",
+
+      marginTop: "1.2em",
+
+      // display: "flex",
+      // alignItems: "center",
+      // justifyContent: "center",
+      // padding: "10px",
     }}
 `;
