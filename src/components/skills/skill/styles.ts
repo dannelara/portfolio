@@ -11,12 +11,11 @@ export const Container = styled.div`
   padding-bottom: 5px;
   border-style: solid;
   border-width: 2px;
-  background-color: rgb(15, 52, 96);
+  background-color: ${(props) => props.theme.colors.bg_cover};
   border-radius: 100px;
-  // font-family: Sofiapro, sans-serif;
-  // color: ${(props) => props.theme.colors.default};
+  letter-spacing: 0.1em;
   font-size: 18px;
   font-weight: 300;
   color: white;
-  box-shadow: inset 0 0 25px ${(props) => props.theme.colors.content_dark};
+  // box-shadow: inset 0 0 25px ${(props) => props.theme.colors.bg_cover};
 `;

@@ -63,4 +63,18 @@ export const StyledSpan = styled.span<Props>`
       lineHeight: "1.34",
       fontWeight: 300,
     }}
+
+    ${(props) =>
+    props.type === "card-main" && {
+      display: "block",
+      padding: "5px",
+      color: "white",
+      fontSize: "40px",
+      lineHeight: "1.34",
+      fontWeight: 300,
+      // boxShadow: `inset 3px 3px 20px 5px ${props.theme.colors.content_bright}`,
+      borderRadius: "15px",
+      letterSpacing: "0.2em",
+      // borderBottom: "1px solid white",
+    }}
 `;
