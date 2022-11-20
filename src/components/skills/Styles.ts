@@ -24,8 +24,9 @@ export const Container = styled.div<Props>`
       display: props._moveIn ? "flex" : "none",
       animation: props._moveIn ? "move3 1.5s forwards" : "",
       transformStyle: "preserve-3d",
-      width: "70%",
-
+      // backgroundColor: "red",
+      // // width: "100%",
+      // // maxHeight: "100vh",
       alignItems: "start",
       justifyContent: "center",
       flexDirection: "column",
