@@ -8,7 +8,11 @@ interface SnippetProps {
 
 export const Snippet: React.FC<SnippetProps> = ({ code, language }) => {
   return (
-    <SyntaxHighlighter language={language} style={vs2015}>
+    <SyntaxHighlighter
+      language={language}
+      style={vs2015}
+      customStyle={{ backgroundColor: "rgb(27, 27, 47, 0.9)" }}
+    >
       {code}
     </SyntaxHighlighter>
   );

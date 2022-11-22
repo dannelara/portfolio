@@ -81,7 +81,7 @@ export const Container = styled.div<Props>`
     ${(props) =>
     props.type === "content-wrapper" && {
       height: "auto",
-      width: "100%",
+      width: "50%",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
@@ -97,7 +97,7 @@ export const Container = styled.div<Props>`
       justifyContent: "center",
       alignItems: "center",
       height: "auto",
-      width: "50%",
+      width: "100%",
       // backgroundColor: props.theme.colors.bg_cover_dark,
     }}
 `;
