@@ -46,14 +46,15 @@ export const Container = styled.div<Props>`
       right: 0,
       bottom: 0,
       width: "80%",
-      height: "100%",
-      overflowY: "scroll",
+      height: "95%",
+
       margin: "auto auto",
       zIndex: 10000,
-      backgroundColor: props.theme.colors.bg_cover,
+      backgroundColor: props.theme.colors.bg_cover_dark,
       justifyContent: "center",
-
+      flexWrap: "wrap",
       // alignItems: "center",
+      padding: 10,
     }}
     
     ${(props) =>
@@ -63,16 +64,30 @@ export const Container = styled.div<Props>`
       alignItems: "center",
       height: "auto",
       width: "100%",
+      color: "white",
     }}
-
     ${(props) =>
     props.type === "content-cover" && {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+      flexWrap: "wrap",
+      height: "100%",
+      width: "100%",
+      overflowY: "scroll",
+      gap: "50px",
+    }}
+
+    ${(props) =>
+    props.type === "content-wrapper" && {
       height: "auto",
       width: "100%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
       flexWrap: "wrap",
+
+      gap: "25px",
     }}
 
     
@@ -82,7 +97,7 @@ export const Container = styled.div<Props>`
       justifyContent: "center",
       alignItems: "center",
       height: "auto",
-      width: "100%",
-      backgroundColor: props.theme.colors.bg_cover,
+      width: "50%",
+      // backgroundColor: props.theme.colors.bg_cover_dark,
     }}
 `;

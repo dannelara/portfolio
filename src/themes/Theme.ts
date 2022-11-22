@@ -8,6 +8,7 @@ const Theme = {
     content_dark: "rgb(27, 27, 47, 0.3)",
     content_bright: "rgba(255, 255, 255, 0.9)",
     bg_cover: "rgb(27, 27, 47, 0.5)",
+    bg_cover_dark: "rgb(27, 27, 47, 0.9)",
   },
 };
 
