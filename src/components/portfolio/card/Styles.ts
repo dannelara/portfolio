@@ -41,7 +41,7 @@ export const Container = styled.div<Props>`
     props.type === "item-big" && {
       display: props.showBigScreen ? "flex" : "none",
       position: "absolute",
-      top: 0,
+      top: 2,
       left: 0,
       right: 0,
       bottom: 0,
@@ -49,7 +49,7 @@ export const Container = styled.div<Props>`
       height: "95%",
 
       margin: "auto auto",
-      zIndex: 10000,
+      zIndex: 100,
       backgroundColor: props.theme.colors.bg_cover_dark,
       justifyContent: "center",
       flexWrap: "wrap",

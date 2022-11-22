@@ -10,10 +10,11 @@ export const Container = styled.div<Props>`
       position: "sticky",
       top: 0,
       display: "flex",
-      padding: "30px 50px",
+      padding: "2px 50px",
       alignItems: "center",
-      backgroundColor: "transparent",
+
       zIndex: 1000,
+      backgroundColor: "white",
       "@media screen and (max-width: 500px)": {
         backgroundColor: "white",
         padding: "5px 10px",
