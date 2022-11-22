@@ -18,6 +18,10 @@ export const Container = styled.div<Props>`
     props.type === "section-auto" && {
       minHeight: "100vh",
       width: "100%",
+      position: "relative",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
 
       marginTop: "1.2em",
 

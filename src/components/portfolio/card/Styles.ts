@@ -2,6 +2,7 @@ import styled from "styled-components";
 interface Props {
   type: String;
   bg_image?: String;
+  showBigScreen?: Boolean;
 }
 
 export const Container = styled.div<Props>`
@@ -17,6 +18,7 @@ export const Container = styled.div<Props>`
       borderRadius: "15px",
       transition: "0.5s",
       marginBottom: "25px",
+      ":hover": { cursor: "pointer" },
       backgroundBlendMode: "multiply",
       " @media (max-width: 1050px)": {
         width: "95%",
@@ -33,5 +35,54 @@ export const Container = styled.div<Props>`
       alignItems: "center",
       justifyContent: "center",
       borderRadius: "inherit",
+    }}
+
+    ${(props) =>
+    props.type === "item-big" && {
+      display: props.showBigScreen ? "flex" : "none",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      width: "80%",
+      height: "100%",
+      overflowY: "scroll",
+      margin: "auto auto",
+      zIndex: 10000,
+      backgroundColor: props.theme.colors.bg_cover,
+      justifyContent: "center",
+
+      // alignItems: "center",
+    }}
+    
+    ${(props) =>
+    props.type === "title-cover" && {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "auto",
+      width: "100%",
+    }}
+
+    ${(props) =>
+    props.type === "content-cover" && {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "auto",
+      width: "100%",
+      flexWrap: "wrap",
+    }}
+
+    
+    ${(props) =>
+    props.type === "content-code" && {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      height: "auto",
+      width: "100%",
+      backgroundColor: props.theme.colors.bg_cover,
     }}
 `;
