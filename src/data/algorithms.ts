@@ -6,7 +6,7 @@ interface Data {
 
 const data: Data[] = [
   {
-    title: "Breadth-first graph.",
+    title: "Breadth-first.",
     code: `
     public class BFS {
        public int[] edge_to;
@@ -77,7 +77,7 @@ const data: Data[] = [
     languague: "java",
   },
   {
-    title: "Depth-first graph.",
+    title: "Depth-first.",
     code: `
     public class DFS {
         private boolean[] marked;
@@ -139,7 +139,7 @@ const data: Data[] = [
     languague: "java",
   },
   {
-    title: "Dijkstra shortest-path graph.",
+    title: "Dijkstra shortest-path.",
     code: `
     public class DijkstraSP {
         private Edge<Integer>[] edge_to;
