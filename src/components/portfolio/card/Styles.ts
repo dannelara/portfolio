@@ -65,6 +65,7 @@ export const Container = styled.div<Props>`
       height: "auto",
       width: "100%",
       color: "white",
+      textAlign: "center",
     }}
     ${(props) =>
     props.type === "content-cover" && {
@@ -81,7 +82,7 @@ export const Container = styled.div<Props>`
     ${(props) =>
     props.type === "content-wrapper" && {
       height: "auto",
-      width: "50%",
+      width: "100%",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
