@@ -11,7 +11,12 @@ export const Snippet: React.FC<SnippetProps> = ({ code, language }) => {
     <SyntaxHighlighter
       language={language}
       style={vs2015}
-      customStyle={{ backgroundColor: "rgb(27, 27, 47, 0.9)" }}
+      customStyle={{
+        backgroundColor: "rgb(27, 27, 47, 0.9)",
+        // maxWidth: "100px",
+        // textAlign: "start",
+        // fontSize: "px",
+      }}
     >
       {code}
     </SyntaxHighlighter>

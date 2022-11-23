@@ -3,12 +3,16 @@ import { Span } from "../../../utils";
 import { Snippet } from "./Snippet/Snippet";
 import { Container } from "./Styles";
 import { GlobalStateContext } from "../../../global/GlobalState";
+import { FcNext } from "react-icons/fc";
+import { FcPrevious } from "react-icons/fc";
+import { AiOutlineClose } from "react-icons/ai";
 
 interface CardProps {
   title: string;
   desc: string;
   bg_image: String;
 }
+
 interface Data {
   title: string;
   code: string;
@@ -20,11 +24,24 @@ export const Card: React.FC<CardProps> = ({ title, desc, bg_image }) => {
 
   const [showBigScreen, setShowBigScreen] = useState(false);
   const [data, setData] = useState<Data[]>([]);
+  const [currentElementInView, seetCurrentElementInView] = useState(0);
 
   const handleClick = (e: any) => {
     setShowBigScreen(!showBigScreen);
     // Set global value to true / false in order to change nav background-color.
     setFull_screen(!full_screen);
+  };
+
+  const nextElement = () => {
+    if (currentElementInView < data.length - 1) {
+      seetCurrentElementInView((old) => (old += 1));
+    }
+  };
+
+  const prevElement = () => {
+    if (currentElementInView > 0) {
+      seetCurrentElementInView((old) => (old -= 1));
+    }
   };
 
   useEffect(() => {
@@ -40,27 +57,42 @@ export const Card: React.FC<CardProps> = ({ title, desc, bg_image }) => {
     <Container type="cover" bg_image={bg_image}>
       <Container type="bg_cover" onClick={handleClick}>
         <Span type="card-main">{title}</Span>
-        <Container type="item-big" showBigScreen={showBigScreen}>
-          <Container type="content-cover">
-            <Container type="content-scroll">
-              {data.length ? (
-                data.map((data, k) => {
-                  return (
-                    <Container type="content-wrapper" key={k}>
-                      <Container type="title-cover">
-                        <Span type="big">{data.title}</Span>
-                      </Container>
+      </Container>
+      <Container type="item-big" showBigScreen={showBigScreen}>
+        <Container type="close-container">
+          <AiOutlineClose onClick={handleClick} />
+        </Container>
 
-                      <Container type="content-code">
-                        <Snippet code={data.code} language={data.languague} />
-                      </Container>
-                    </Container>
-                  );
-                })
-              ) : (
-                <div></div>
+        <Container type="content-wrapper">
+          <Container type="content-controll">
+            {currentElementInView > 0 && <FcPrevious onClick={prevElement} />}
+          </Container>
+          <Container type="content-big">
+            <Container type="title-cover">
+              {data.length > 0 && (
+                <Span type="big">{data[currentElementInView].title}</Span>
               )}
             </Container>
+            {/* <Container type="content-controller-small">
+              {currentElementInView > 0 && <FcPrevious onClick={prevElement} />}
+              {currentElementInView < data.length - 1 && (
+                <FcNext onClick={nextElement} />
+              )}
+            </Container> */}
+            <Container type="content-code">
+              {data.length > 0 && (
+                <Snippet
+                  code={data[currentElementInView].code}
+                  language={data[currentElementInView].languague}
+                />
+              )}
+            </Container>
+          </Container>
+
+          <Container type="content-controll">
+            {currentElementInView < data.length - 1 && (
+              <FcNext onClick={nextElement} />
+            )}
           </Container>
         </Container>
       </Container>

@@ -35,7 +35,8 @@ export const Container = styled.div<Props>`
       borderRadius: "15px",
       transition: "0.5s",
       marginBottom: "25px",
-      ":hover": { cursor: "pointer" },
+      // ":hover": { cursor: "pointer" },
+
       backgroundBlendMode: "multiply",
       " @media (max-width: 1050px)": {
         width: "95%",
@@ -71,56 +72,87 @@ export const Container = styled.div<Props>`
       justifyContent: "center",
       flexWrap: "wrap",
       // alignItems: "center",
-      padding: 10,
-    }}
-    
-    ${(props) =>
-    props.type === "title-cover" && {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      height: "auto",
-      width: "100%",
-      color: "white",
-      textAlign: "center",
-      "> span": {
-        fontSize: "20px",
-        fontWeight: "15px",
-      },
-    }}
-    ${(props) =>
-    props.type === "content-cover" && {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      flexWrap: "wrap",
-      height: "100%",
-      width: "100%",
+      // padding: 10,
     }}
 
     ${(props) =>
-    props.type === "content-scroll" && {
-      height: "100%",
-      overflowY: "scroll",
+    props.type === "close-container" && {
+      position: "absolute",
+      top: 25,
+      right: 25,
+      "> svg": {
+        color: "white",
+
+        fontSize: "35px",
+        ":hover": {
+          cursor: "pointer",
+        },
+      },
     }}
 
     ${(props) =>
     props.type === "content-wrapper" && {
-      height: "auto",
-      padding: 2,
+      width: "100%",
+      height: "100%",
       display: "flex",
-      justifyContent: "center",
+      justifyContent: "space-evenly",
       alignItems: "center",
-      flexWrap: "wrap",
-      gap: "25px",
     }}
 
     
     ${(props) =>
-    props.type === "content-code" && {
+    props.type === "content-controll" && {
+      width: "auto",
+
+      height: "100%",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
+
+      "> svg": {
+        fontSize: "35px",
+        "> polygon": {
+          fill: "white",
+        },
+        ":hover": {
+          transform: "scale(150%);",
+          transition: "ease 0.5s",
+          cursor: "pointer",
+        },
+      },
+    }}
+
+    ${(props) =>
+    props.type === "content-controller-small" &&
+    {
+      // width: "100%",
+      // display: "flex",
+      // alignItems: "center",
+      // justifyContent: "space-evenly",
+    }}
+      
+    ${(props) =>
+    props.type === "content-big" && {
+      height: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      flexWrap: "wrap",
+    }}
+
+    ${(props) =>
+    props.type === "title-cover" && {
+      width: "100%",
       height: "auto",
+      "> span": {
+        color: "white",
+      },
+    }}
+      
+    ${(props) =>
+    props.type === "content-code" && {
+      width: "auto",
+      height: "70%",
+      overflowY: "scroll",
     }}
 `;
