@@ -40,21 +40,10 @@ export const Container = styled.div<Props>`
 
     ${(props) =>
     props.type === "content" && {
-      // transition: "0.4s",
-      // ":hover": {
-      //   transform: props.hover_effect ? "scale(105%)" : "",
-      //   zIndex: 2,
-      // },
-
-      // backgroundColor:
-      //   props._color === "dark" ? props.theme.colors.content_dark : "",
       height: "80%",
       width: "80%",
       borderRadius: 5,
-      "@media screen and (max-width: 1050px)": {
-        // width: "75%",
-      },
-
+      "@media screen and (max-width: 1050px)": {},
       "@media screen and (max-width: 500px)": {
         height: "auto",
         minHeight: "25%",

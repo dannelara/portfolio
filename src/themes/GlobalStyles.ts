@@ -19,26 +19,6 @@ const GlobalStyle = createGlobalStyle`
 div[type='content-code']::-webkit-scrollbar {
   display: none;
 }
-
-// div[type='item-big']::-webkit-scrollbar-track {
-//   background-color: transparent;
-// }
-
-// div[type='item-big']::-webkit-scrollbar-thumb {
-//   background-color: #1c3879;
-//   border-radius: 15px;
-// }
-
-// div[type='item-big']::-webkit-scrollbar-thumb {
-//   background-color: #1c3879;
-// }
-// div[type='item-big']::-webkit-scrollbar-thumb {
-//   background-color: #1c3879;
-//   border-radius: 20px;
-//   border: 6px solid transparent;
-//   background-clip: content-box;
-// }
-
 }
   `;
 

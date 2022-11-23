@@ -24,10 +24,5 @@ export const Container = styled.div<Props>`
       justifyContent: "center",
 
       marginTop: "1.2em",
-
-      // display: "flex",
-      // alignItems: "center",
-      // justifyContent: "center",
-      // padding: "10px",
     }}
 `;
