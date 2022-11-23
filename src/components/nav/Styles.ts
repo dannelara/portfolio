@@ -13,9 +13,6 @@ export const Container = styled.div<Props>`
       padding: "2px 50px",
       alignItems: "center",
       zIndex: 1000,
-      // backgroundColor: props.text_color ? "white" : "black",
-      // backgroundColor: "white",
-      // textDecorationColor: "white",
       "@media screen and (max-width: 500px)": {
         backgroundColor: "white",
         padding: "5px 10px",

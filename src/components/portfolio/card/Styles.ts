@@ -28,19 +28,23 @@ export const Container = styled.div<Props>`
       height: "250px",
       width: "45%",
       backgroundImage: `url(${props.bg_image})`,
-      backgroundPosition: "center" /* Center the image */,
-      backgroundRepeat: "no-repeat" /* Do not repeat the image */,
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
       backgroundColor: "white",
       borderRadius: "15px",
       transition: "0.5s",
       marginBottom: "25px",
-      // ":hover": { cursor: "pointer" },
 
       backgroundBlendMode: "multiply",
       " @media (max-width: 1050px)": {
         width: "95%",
         height: "250px",
+      },
+      "div[type='bg_cover']": {
+        ":hover": {
+          cursor: "pointer",
+        },
       },
     }}
 
@@ -48,7 +52,7 @@ export const Container = styled.div<Props>`
     props.type === "bg_cover" && {
       height: "100%",
       width: "100%",
-      backgroundColor: props.theme.colors.bg_cover,
+      backgroundColor: props.theme.colors.bg_cover_dark,
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -63,7 +67,6 @@ export const Container = styled.div<Props>`
       left: 0,
       right: 0,
       bottom: 0,
-      // width: "auto",
       height: "100%",
       animation: "grow_big 0.5s forwards",
       margin: "auto auto",
@@ -71,8 +74,6 @@ export const Container = styled.div<Props>`
       backgroundColor: props.theme.colors.bg_cover_dark,
       justifyContent: "center",
       flexWrap: "wrap",
-      // alignItems: "center",
-      // padding: 10,
     }}
 
     ${(props) =>
@@ -82,7 +83,6 @@ export const Container = styled.div<Props>`
       right: 25,
       "> svg": {
         color: "white",
-
         fontSize: "35px",
         ":hover": {
           cursor: "pointer",

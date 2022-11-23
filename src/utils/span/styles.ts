@@ -37,13 +37,10 @@ export const StyledSpan = styled.span<Props>`
       display: "flex",
       height: "auto",
       width: "100%",
-
       alignItems: "center",
       justifyContent: "center",
-
       fontWeight: 700,
       fontSize: 30,
-      // fontFamily: "Recoleta, sans-serif",
     }}
 
     ${(props) =>
@@ -54,11 +51,8 @@ export const StyledSpan = styled.span<Props>`
       display: "flex",
       height: "auto",
       width: "100%",
-
       alignItems: "center",
       justifyContent: "center",
-      // fontFamily: "Sofiapro, sans-serif",
-      // color: "#535353",
       fontSize: "20px",
       lineHeight: "1.34",
       fontWeight: 300,
@@ -67,8 +61,6 @@ export const StyledSpan = styled.span<Props>`
 
     ${(props) =>
     props.type === "small" && {
-      // opacity: 0,
-      // animation: "moveIn 1s .5s forwards",
       transformStyle: "preserve-3d",
       display: "flex",
       height: "auto",
@@ -76,8 +68,6 @@ export const StyledSpan = styled.span<Props>`
 
       alignItems: "center",
       justifyContent: "center",
-      // fontFamily: "Sofiapro, sans-serif",
-      // color: "#535353",
       fontSize: "15px",
       lineHeight: "1.34",
       fontWeight: 300,
@@ -91,9 +81,8 @@ export const StyledSpan = styled.span<Props>`
       fontSize: "25px",
       lineHeight: "1.34",
       fontWeight: 300,
-      // boxShadow: `inset 3px 3px 20px 5px ${props.theme.colors.content_bright}`,
+
       borderRadius: "15px",
       letterSpacing: "0.06em",
-      // borderBottom: "1px solid white",
     }}
 `;
