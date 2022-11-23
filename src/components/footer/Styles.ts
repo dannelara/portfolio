@@ -31,5 +31,6 @@ export const Container = styled.div<Props>`
       display: "flex",
       alignItems: "center",
       justifyContent: "space-evenly",
+      textAlign: "center",
     }}
 `;

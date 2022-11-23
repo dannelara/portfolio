@@ -12,7 +12,7 @@ export const Footer: React.FC<FooterProps> = ({ id }) => {
       <Container type="content-wrapper">
         <Container type="content">
           <Container type="content-small-flex">
-            <Span type="big">
+            <Span type="default">
               <p>Connect with me on</p>
             </Span>
           </Container>
@@ -34,9 +34,11 @@ export const Footer: React.FC<FooterProps> = ({ id }) => {
           </Container>
         </Container>
         <Container type="content">
-          <Span type="default">
-            Copyright 2022, Daniel Martinez Lara, All rights reserved.
-          </Span>
+          <Container type="content-small-flex">
+            <Span type="default">
+              Copyright 2022, Daniel Martinez Lara, All rights reserved.
+            </Span>
+          </Container>
         </Container>
       </Container>
     </Section>
