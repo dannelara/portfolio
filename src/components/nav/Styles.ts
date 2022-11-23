@@ -7,14 +7,15 @@ interface Props {
 export const Container = styled.div<Props>`
   ${(props) =>
     props.type === "container" && {
-      position: "sticky",
+      // position: "sticky",
       top: 0,
       display: "flex",
       padding: "2px 50px",
       alignItems: "center",
-
       zIndex: 1000,
-      backgroundColor: "white",
+      // backgroundColor: props.text_color ? "white" : "black",
+      // backgroundColor: "white",
+      // textDecorationColor: "white",
       "@media screen and (max-width: 500px)": {
         backgroundColor: "white",
         padding: "5px 10px",
@@ -27,6 +28,7 @@ export const Container = styled.div<Props>`
       justifyContent: "space-between",
       alignItems: "center",
       flex: 1,
+
       "@media screen and (max-width: 500px)": {
         backgroundColor: "white",
         display: "flex",
@@ -46,6 +48,7 @@ export const Container = styled.div<Props>`
     props.type === "link-wrapper" && {
       height: "auto",
       width: "100%",
+
       //   backgroundColor: props.theme.colors.content_dark,
       display: "flex",
       alignItems: "center",

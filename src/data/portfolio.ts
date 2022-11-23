@@ -1,5 +1,5 @@
 import bg_image from "../img/bg.jpg";
-
+import iot_image from "../img/iot.png";
 interface Data {
   title: string;
   desc: string;
@@ -20,7 +20,7 @@ const data: Data[] = [
   {
     title: "IOT",
     desc: "tdesc",
-    bg_image: bg_image,
+    bg_image: iot_image,
   },
 ];
 

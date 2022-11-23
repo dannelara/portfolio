@@ -17,6 +17,7 @@ export const Container = styled.div<Props>`
 
   ${(props) =>
     props.type === "main" && {
+      position: "relative",
       height: "100%",
       width: "100%",
       backgroundColor: props.theme.colors.default,

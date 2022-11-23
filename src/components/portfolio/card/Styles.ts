@@ -6,6 +6,23 @@ interface Props {
 }
 
 export const Container = styled.div<Props>`
+  @keyframes grow_big {
+    from {
+      display: 0;
+      // width: 0%;
+      transform: scale(0);
+      // transform: translate3d(0px, 50px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+      //   rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(100%);
+      // transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+      //   rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    }
+  }
+
   ${(props) =>
     props.type === "cover" && {
       height: "250px",
@@ -41,13 +58,13 @@ export const Container = styled.div<Props>`
     props.type === "item-big" && {
       display: props.showBigScreen ? "flex" : "none",
       position: "absolute",
-      top: 2,
+      top: 0,
       left: 0,
       right: 0,
       bottom: 0,
-      width: "80%",
-      height: "95%",
-
+      // width: "auto",
+      height: "100%",
+      animation: "grow_big 0.5s forwards",
       margin: "auto auto",
       zIndex: 100,
       backgroundColor: props.theme.colors.bg_cover_dark,
@@ -66,6 +83,10 @@ export const Container = styled.div<Props>`
       width: "100%",
       color: "white",
       textAlign: "center",
+      "> span": {
+        fontSize: "20px",
+        fontWeight: "15px",
+      },
     }}
     ${(props) =>
     props.type === "content-cover" && {
@@ -75,19 +96,22 @@ export const Container = styled.div<Props>`
       flexWrap: "wrap",
       height: "100%",
       width: "100%",
+    }}
+
+    ${(props) =>
+    props.type === "content-scroll" && {
+      height: "100%",
       overflowY: "scroll",
-      gap: "50px",
     }}
 
     ${(props) =>
     props.type === "content-wrapper" && {
       height: "auto",
-      width: "100%",
+      padding: 2,
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
       flexWrap: "wrap",
-
       gap: "25px",
     }}
 
@@ -98,7 +122,5 @@ export const Container = styled.div<Props>`
       justifyContent: "center",
       alignItems: "center",
       height: "auto",
-      width: "100%",
-      // backgroundColor: props.theme.colors.bg_cover_dark,
     }}
 `;

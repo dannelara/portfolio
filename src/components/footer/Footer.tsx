@@ -33,6 +33,11 @@ export const Footer: React.FC<FooterProps> = ({ id }) => {
             </Link>
           </Container>
         </Container>
+        <Container type="content">
+          <Span type="default">
+            Copyright 2022, Daniel Martinez Lara, All rights reserved.
+          </Span>
+        </Container>
       </Container>
     </Section>
   );

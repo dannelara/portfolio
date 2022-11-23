@@ -16,27 +16,29 @@ const GlobalStyle = createGlobalStyle`
 
 }
 
-::-webkit-scrollbar {
-  width: 10px;
+div[type='content-scroll']::-webkit-scrollbar {
+  display: none;
 }
 
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
+// div[type='item-big']::-webkit-scrollbar-track {
+//   background-color: transparent;
+// }
 
-::-webkit-scrollbar-thumb {
-  background-color: #1c3879;
-  border-radius: 15px;
-}
+// div[type='item-big']::-webkit-scrollbar-thumb {
+//   background-color: #1c3879;
+//   border-radius: 15px;
+// }
 
-::-webkit-scrollbar-thumb {
-  background-color: #1c3879;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #1c3879;
-  border-radius: 20px;
-  border: 6px solid transparent;
-  background-clip: content-box;
+// div[type='item-big']::-webkit-scrollbar-thumb {
+//   background-color: #1c3879;
+// }
+// div[type='item-big']::-webkit-scrollbar-thumb {
+//   background-color: #1c3879;
+//   border-radius: 20px;
+//   border: 6px solid transparent;
+//   background-clip: content-box;
+// }
+
 }
   `;
 

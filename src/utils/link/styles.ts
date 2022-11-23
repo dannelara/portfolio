@@ -36,11 +36,8 @@ export const A = styled.a<Props>`
 
     ${(props) =>
     props.type === "nav" && {
-      // paddingTop: "3px",
-      // paddingBottom: "3px",
-      // opacity: "0.6",
-      color: "black",
-      // fontFamily: "Recoleta, sans-serif",
+      color: props.color,
+      transition: "ease-in 0.5s",
       fontSize: "13.5px",
       lineHeight: "20px",
       fontWeight: 700,
@@ -52,11 +49,7 @@ export const A = styled.a<Props>`
 
     ${(props) =>
     props.type === "logo" && {
-      // paddingTop: "3px",
-      // paddingBottom: "3px",
-      // opacity: "0.6",
       color: "black",
-      // fontFamily: "Recoleta, sans-serif",
       fontSize: "20px",
       lineHeight: "20px",
       fontWeight: 700,
