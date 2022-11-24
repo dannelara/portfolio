@@ -1,15 +1,8 @@
 import React from "react";
 import { Link } from "../../utils";
 import { Container } from "./Styles";
-import { GlobalStateContext } from "../../global/GlobalState";
 
-interface NavProps {}
-
-export const Nav: React.FC<NavProps> = ({}) => {
-  const { full_screen } = React.useContext(GlobalStateContext);
-
-  console.log(full_screen);
-
+export const Nav: React.FC = ({}) => {
   return (
     <Container type="container">
       <Container type="nav-wrapper">

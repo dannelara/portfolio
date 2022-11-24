@@ -7,15 +7,17 @@ interface Props {
 export const Container = styled.div<Props>`
   ${(props) =>
     props.type === "container" && {
-      // position: "sticky",
+      position: "sticky",
       top: 0,
       display: "flex",
       padding: "2px 50px",
       alignItems: "center",
       zIndex: 1000,
-      "@media screen and (max-width: 500px)": {
+      "@media screen and (max-width: 1300px)": {
+        boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.2)",
         backgroundColor: "white",
-        padding: "5px 10px",
+
+        bottom: 0,
       },
     }}
 

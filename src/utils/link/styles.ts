@@ -27,7 +27,7 @@ export const A = styled.a<Props>`
 
   ${(props) =>
     props.type === "external" && {
-      fontSize: "25px",
+      fontSize: "20px",
       lineHeight: 1,
       fontWeight: 700,
       letterSpacing: "-0.03em",
@@ -57,7 +57,7 @@ export const A = styled.a<Props>`
       textTransform: "none",
       textDecoration: "none",
       padding: 5,
-      "@media screen and (max-width: 400px)": {
+      "@media screen and (max-width: 500px)": {
         display: props._hide ? "none" : "",
       },
     }}

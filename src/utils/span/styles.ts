@@ -70,7 +70,7 @@ export const StyledSpan = styled.span<Props>`
       justifyContent: "center",
       fontSize: "15px",
       lineHeight: "1.34",
-      fontWeight: 300,
+      fontWeight: 500,
     }}
   
     ${(props) =>

@@ -4,9 +4,7 @@ const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-   
     scroll-behavior: smooth;
-  
   }
 
   html, body, #root {
@@ -19,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
 div[type='content-code']::-webkit-scrollbar {
   display: none;
 }
+
 }
   `;
 

@@ -14,8 +14,9 @@ export const Container = styled.div<Props>`
       justifyContent: "center",
       gap: 25,
       "@media screen and (max-width: 500px)": {
-        padding: 10,
+        flexWrap: "wrap-reverse",
         gap: 0,
+        paddingBottom: 10,
       },
     }}
 
@@ -29,7 +30,9 @@ export const Container = styled.div<Props>`
       justifyContent: "center",
       flexWrap: "wrap",
       "@media screen and (max-width: 500px)": {
-        width: "auto",
+        width: "100%",
+        height: "auto",
+        paddingBottom: 15,
       },
     }}
 
@@ -44,5 +47,6 @@ export const Container = styled.div<Props>`
     ${(props) =>
     props.type === "desc" && {
       width: "90%",
+      textAlign: "center",
     }}
 `;

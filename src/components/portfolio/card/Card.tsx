@@ -86,6 +86,12 @@ export const Card: React.FC<CardProps> = ({ title, desc, bg_image }) => {
                   language={data[currentElementInView].languague}
                 />
               )}
+              {/* {data.length > 0 && (
+                <Snippet
+                  code={data[currentElementInView].code}
+                  language={data[currentElementInView].languague}
+                />
+              )} */}
             </Container>
           </Container>
 

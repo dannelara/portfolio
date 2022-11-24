@@ -26,9 +26,8 @@ export const Img = styled.img<Props>`
       maxWidth: "100%",
       minWidth: "50%",
       borderRadius: "100%",
-
       "@media screen and (max-width: 500px)": {
-        display: "none",
+        width: "70%",
       },
     }}
 `;

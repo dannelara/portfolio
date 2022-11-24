@@ -11,7 +11,7 @@ export const Container = styled.div`
   padding-bottom: 5px;
   border-style: solid;
   border-width: 2px;
-  background-color: ${(props) => props.theme.colors.bg_cover};
+  background-color: ${(props) => props.theme.colors.bg_cover_dark};
   border-radius: 100px;
   letter-spacing: 0.1em;
   font-size: 18px;

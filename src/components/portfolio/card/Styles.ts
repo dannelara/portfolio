@@ -62,18 +62,27 @@ export const Container = styled.div<Props>`
     ${(props) =>
     props.type === "item-big" && {
       display: props.showBigScreen ? "flex" : "none",
-      position: "absolute",
+      position: "fixed",
       top: 0,
       left: 0,
-      right: 0,
-      bottom: 0,
-      height: "100%",
-      animation: "grow_big 0.5s forwards",
-      margin: "auto auto",
-      zIndex: 100,
+      zIndex: 10000,
+      height: "100vh",
+      width: "100vw",
       backgroundColor: props.theme.colors.bg_cover_dark,
-      justifyContent: "center",
-      flexWrap: "wrap",
+      animation: "grow_big 0.5s forwards",
+
+      // position: "absolute",
+      // top: 0,
+      // left: 0,
+      // right: 0,
+      // bottom: 0,
+      // height: "100vh",
+      // animation: "grow_big 0.5s forwards",
+      // margin: "auto auto",
+      // zIndex: 100,
+      // backgroundColor: props.theme.colors.bg_cover_dark,
+      // justifyContent: "center",
+      // flexWrap: "wrap",
     }}
 
     ${(props) =>
@@ -102,8 +111,7 @@ export const Container = styled.div<Props>`
     
     ${(props) =>
     props.type === "content-controll" && {
-      width: "auto",
-
+      // flex: "3 3",
       height: "100%",
       display: "flex",
       justifyContent: "center",
@@ -137,6 +145,7 @@ export const Container = styled.div<Props>`
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      width: "fit-content",
       flexWrap: "wrap",
     }}
 
@@ -154,5 +163,24 @@ export const Container = styled.div<Props>`
       width: "auto",
       height: "70%",
       overflowY: "scroll",
+      " @media (max-width: 800px)": {
+        "> pre": {
+          // lineHeight: "1",
+          counterReset: "line",
+          counterIncrement: "line",
+          position: "relative",
+          display: "block",
+          // marginLeft: "1.5rem",
+          padding: 0,
+          // maxWidth: "300px",
+          textAlign: "start",
+          fontSize: "10px",
+          // maxWidth: "80%",
+
+          // scrollbarWidth: "0%",
+        },
+        // width: "fit-content",
+        // height: "250px",
+      },
     }}
 `;

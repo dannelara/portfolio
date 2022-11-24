@@ -28,6 +28,7 @@ export const Container = styled.div<Props>`
       justifyContent: "center",
       flexDirection: "column",
       gap: 20,
+      width: "90%",
     }}
 
   ${(props) =>
