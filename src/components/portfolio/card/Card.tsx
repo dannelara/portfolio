@@ -6,6 +6,7 @@ import { GlobalStateContext } from "../../../global/GlobalState";
 import { FcNext } from "react-icons/fc";
 import { FcPrevious } from "react-icons/fc";
 import { AiOutlineClose } from "react-icons/ai";
+import { AlgoView } from "./algoView/AlgoView";
 
 interface CardProps {
   title: string;
@@ -80,18 +81,7 @@ export const Card: React.FC<CardProps> = ({ title, desc, bg_image }) => {
               )}
             </Container> */}
             <Container type="content-code">
-              {data.length > 0 && (
-                <Snippet
-                  code={data[currentElementInView].code}
-                  language={data[currentElementInView].languague}
-                />
-              )}
-              {/* {data.length > 0 && (
-                <Snippet
-                  code={data[currentElementInView].code}
-                  language={data[currentElementInView].languague}
-                />
-              )} */}
+              <AlgoView height={500} width={400} cnt={50} />
             </Container>
           </Container>
 
