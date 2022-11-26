@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
+import { Span } from "../../../../utils";
 import { Container } from "./Styles";
-
+import { MdOutlineRestartAlt } from "react-icons/md";
 interface AlgoViewProps {
   width: number;
   height: number;
@@ -14,8 +15,11 @@ interface Pillar {
 export const AlgoView: React.FC<AlgoViewProps> = ({ height, width, cnt }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [values, setValues] = useState<Pillar[]>([]);
-
   const [updatedCnth, setUpdatedCnth] = useState(0);
+
+  const reset = () => {
+    setUp();
+  };
 
   const sleep = (ms: number) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -27,7 +31,13 @@ export const AlgoView: React.FC<AlgoViewProps> = ({ height, width, cnt }) => {
     for (let i: number = 0; i < cnt; i++) {
       const val = Math.floor(Math.random() * 500);
 
-      setValues((current) => [...current, { color: "white", height: val }]);
+      setValues((current) => [
+        ...current,
+        {
+          color: `white`,
+          height: val,
+        },
+      ]);
     }
   };
 
@@ -45,7 +55,7 @@ export const AlgoView: React.FC<AlgoViewProps> = ({ height, width, cnt }) => {
 
   const start = async () => {
     for (let i = 0; i < values.length; i++) {
-      values[i].color = "red";
+      // values[i].color = "red";
       const newVals = insert_sort(i);
       setValues(newVals);
       setUpdatedCnth((old) => old + 1);
@@ -63,32 +73,46 @@ export const AlgoView: React.FC<AlgoViewProps> = ({ height, width, cnt }) => {
     setUp();
   }, []);
 
-  useEffect(() => {
-    console.log(updatedCnth);
-  }, [updatedCnth]);
+  useEffect(() => {}, [updatedCnth]);
 
   return (
     <Container type="wrapper" ref={containerRef}>
-      <button
-        onClick={start}
-        style={{
-          position: "absolute",
-          top: 0,
-        }}
-      >
-        Start
-      </button>
-      {values &&
-        values.map((pilar, k) => {
-          return (
-            <Container
-              type="pillar"
-              bg_color={pilar.color}
-              height={pilar.height}
-              key={k}
-            ></Container>
-          );
-        })}
+      <Container type="controll-wrapper">
+        <Container type="controll">
+          <Span type="" onClick={start}>
+            Start
+          </Span>
+
+          {/* <Span type="controller" onClick={start}>
+          Start
+        </Span> */}
+        </Container>
+        <Container type="controll">
+          <Span type="">Code</Span>
+
+          {/* <Span type="controller" onClick={start}>
+          Start
+        </Span> */}
+        </Container>
+        {/* <Span type="controller">Source code</Span> */}
+      </Container>
+
+      <Container type="wrapper-pillars">
+        <Container type="reset-wrapper">
+          <MdOutlineRestartAlt onClick={reset} />
+        </Container>
+        {values &&
+          values.map((pilar, k) => {
+            return (
+              <Container
+                type="pillar"
+                bg_color={pilar.color}
+                height={pilar.height}
+                key={k}
+              ></Container>
+            );
+          })}
+      </Container>
     </Container>
   );
 };
