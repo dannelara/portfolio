@@ -85,4 +85,32 @@ export const StyledSpan = styled.span<Props>`
       borderRadius: "15px",
       letterSpacing: "0.06em",
     }}
+
+    ${(props) =>
+    props.type === "btn" && {
+      border: "2px solid #d2bdff",
+      // height: "30px",
+      // width: "61px",
+      // // width: "200px",
+      // borderRadius: "4px",
+
+      // color: "white",
+      // cursor: "pointer",
+      // fontFamily: "Roboto, sans-serif",
+      // padding: "30px 61px",
+      // margin: "25px",
+
+      // fontWeight: 500,
+      // fontSize: 20,
+      // color: "white",
+      // padding: 5,
+      // borderRadius: 10,
+      // backgroundColor: props.theme.colors.bg_cover_dark,
+
+      // border: "1px solid white",
+      // ":hover": {
+      //   cursor: "pointer",
+      // },
+      // color: props.theme.colors.content_title,
+    }}
 `;

@@ -16,8 +16,6 @@ interface CardProps {
 
 interface Data {
   title: string;
-  code: string;
-  languague: string;
 }
 
 export const Card: React.FC<CardProps> = ({ title, desc, bg_image }) => {
@@ -33,17 +31,17 @@ export const Card: React.FC<CardProps> = ({ title, desc, bg_image }) => {
     setFull_screen(!full_screen);
   };
 
-  const nextElement = () => {
-    if (currentElementInView < data.length - 1) {
-      seetCurrentElementInView((old) => (old += 1));
-    }
-  };
+  // const nextElement = () => {
+  //   if (currentElementInView < data.length - 1) {
+  //     seetCurrentElementInView((old) => (old += 1));
+  //   }
+  // };
 
-  const prevElement = () => {
-    if (currentElementInView > 0) {
-      seetCurrentElementInView((old) => (old -= 1));
-    }
-  };
+  // const prevElement = () => {
+  //   if (currentElementInView > 0) {
+  //     seetCurrentElementInView((old) => (old -= 1));
+  //   }
+  // };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -65,30 +63,16 @@ export const Card: React.FC<CardProps> = ({ title, desc, bg_image }) => {
         </Container>
 
         <Container type="content-wrapper">
-          <Container type="content-controll">
-            {currentElementInView > 0 && <FcPrevious onClick={prevElement} />}
-          </Container>
-          <Container type="content-big">
-            <Container type="title-cover">
-              {data.length > 0 && (
-                <Span type="big">{data[currentElementInView].title}</Span>
-              )}
-            </Container>
-            {/* <Container type="content-controller-small">
-              {currentElementInView > 0 && <FcPrevious onClick={prevElement} />}
-              {currentElementInView < data.length - 1 && (
-                <FcNext onClick={nextElement} />
-              )}
-            </Container> */}
-            <Container type="content-code">
-              <AlgoView height={500} width={400} cnt={50} />
-            </Container>
+          <Container type="top">
+            {data.map((d, k) => (
+              <Span type="card-main" key={k}>
+                {d.title}
+              </Span>
+            ))}
           </Container>
 
-          <Container type="content-controll">
-            {currentElementInView < data.length - 1 && (
-              <FcNext onClick={nextElement} />
-            )}
+          <Container type="content">
+            <AlgoView height={500} width={400} cnt={100} />
           </Container>
         </Container>
       </Container>

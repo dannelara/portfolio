@@ -90,11 +90,14 @@ export const Container = styled.div<Props>`
       position: "absolute",
       top: 25,
       right: 25,
+
       "> svg": {
         color: "white",
         fontSize: "35px",
         ":hover": {
           cursor: "pointer",
+          transition: "0.5s",
+          transform: "scale(120%)",
         },
       },
     }}
@@ -104,83 +107,28 @@ export const Container = styled.div<Props>`
       width: "100%",
       height: "100%",
       display: "flex",
-      justifyContent: "space-evenly",
-      alignItems: "center",
-    }}
-
-    
-    ${(props) =>
-    props.type === "content-controll" && {
-      // flex: "3 3",
-      height: "100%",
-      display: "flex",
       justifyContent: "center",
       alignItems: "center",
-
-      "> svg": {
-        fontSize: "35px",
-        "> polygon": {
-          fill: "white",
-        },
-        ":hover": {
-          transform: "scale(150%);",
-          transition: "ease 0.5s",
-          cursor: "pointer",
-        },
-      },
-    }}
-
-    ${(props) =>
-    props.type === "content-controller-small" &&
-    {
-      // width: "100%",
-      // display: "flex",
-      // alignItems: "center",
-      // justifyContent: "space-evenly",
-    }}
-      
-    ${(props) =>
-    props.type === "content-big" && {
-      height: "100%",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      width: "fit-content",
       flexWrap: "wrap",
     }}
 
     ${(props) =>
-    props.type === "title-cover" && {
-      width: "100%",
-      height: "auto",
-      "> span": {
-        color: "white",
-      },
-    }}
-      
-    ${(props) =>
-    props.type === "content-code" && {
+    props.type === "top" && {
+      display: "flex",
+      // top: 0,
       width: "auto",
-      height: "70%",
-      overflowY: "scroll",
-      " @media (max-width: 800px)": {
-        "> pre": {
-          // lineHeight: "1",
-          counterReset: "line",
-          counterIncrement: "line",
-          position: "relative",
-          display: "block",
-          // marginLeft: "1.5rem",
-          padding: 0,
-          // maxWidth: "300px",
-          textAlign: "start",
-          fontSize: "10px",
-          // maxWidth: "80%",
+      gap: "10px",
+    }}
 
-          // scrollbarWidth: "0%",
-        },
-        // width: "fit-content",
-        // height: "250px",
-      },
+    ${(props) =>
+    props.type === "content" && {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      top: 0,
+      width: "100%",
+      gap: "10px",
+      height: "auto",
+      maxHeight: "70%",
     }}
 `;

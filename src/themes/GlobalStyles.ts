@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
 
 }
 
-div[type='content-code']::-webkit-scrollbar {
+div[type='content']::-webkit-scrollbar {
   display: none;
 }
 
