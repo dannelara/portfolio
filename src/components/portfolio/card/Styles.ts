@@ -118,6 +118,9 @@ export const Container = styled.div<Props>`
       // top: 0,
       width: "auto",
       gap: "10px",
+      ":last-child": {
+        fontSize: "10px",
+      },
     }}
 
     ${(props) =>

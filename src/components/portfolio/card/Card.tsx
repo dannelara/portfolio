@@ -65,14 +65,14 @@ export const Card: React.FC<CardProps> = ({ title, desc, bg_image }) => {
         <Container type="content-wrapper">
           <Container type="top">
             {data.map((d, k) => (
-              <Span type="card-main" key={k}>
+              <Span type={"card-main"} key={k}>
                 {d.title}
               </Span>
             ))}
           </Container>
 
           <Container type="content">
-            <SortingVisualizer cnt={50} />
+            <SortingVisualizer cnt={35} />
           </Container>
         </Container>
       </Container>

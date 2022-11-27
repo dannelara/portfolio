@@ -9,8 +9,8 @@ export const Container = styled.div<Props>`
   ${(props) =>
     props.type === "wrapper" && {
       position: "relative",
-      width: "auto",
-      hegiht: `100%`,
+      width: "100%",
+      hegiht: "100%",
       maxHeight: "100%",
       display: "flex",
       //   backgroundColor: props.theme.colors.bg_cover_dark,
@@ -21,23 +21,30 @@ export const Container = styled.div<Props>`
 
   ${(props) =>
     props.type === "wrapper-pillars" && {
+      marginTop: "5%",
       position: "relative",
-      width: "100%",
-      height: `100%`,
-      maxHeight: "100%",
+      width: "60%",
+      maxWidth: "50%",
+
+      height: "auto",
+      maxHeight: "500px",
       display: "flex",
-      //   backgroundColor: props.theme.colors.bg_cover_dark,
-      justifyContent: "space-evenly",
+
       alignItems: "end",
-      padding: "5px",
-      gap: "2px",
+      justifyContent: "center",
+      gap: 5,
+      "@media screen and (max-width: 500px)": {
+        maxWidth: "100%",
+        width: "90%",
+        gap: 2,
+      },
     }}
 
   ${(props) =>
     props.type === "controll-wrapper" && {
       height: "fit-content",
       width: "100%",
-      // backgroundColor: props.theme.colors.bg_cover_dark,
+
       textAlign: "center",
       display: "flex",
 
