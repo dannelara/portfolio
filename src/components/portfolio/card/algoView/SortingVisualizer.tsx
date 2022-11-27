@@ -27,7 +27,7 @@ export const SortingVisualizer: React.FC<SortingVisualizerProps> = ({
     setValues((old) => (old = []));
 
     for (let i = 0; i < cnt; i++) {
-      const val = Math.floor(Math.random() * 500);
+      const val = Math.floor(Math.random() * 350);
       setValues((old) => [
         ...old,
         {
@@ -71,25 +71,24 @@ export const SortingVisualizer: React.FC<SortingVisualizerProps> = ({
           <Span type="" onClick={algoRunning ? async () => {} : start}>
             Start
           </Span>
-
-          {/* <Span type="controller" onClick={start}>
-          Start
-        </Span> */}
         </Container>
         <Container type="controll">
           <Span type="">Code</Span>
-
-          {/* <Span type="controller" onClick={start}>
-          Start
-        </Span> */}
         </Container>
-        {/* <Span type="controller">Source code</Span> */}
+        <Container type="controll">
+          <MdOutlineRestartAlt
+            onClick={algoRunning ? () => {} : reset}
+            style={{
+              width: "30px",
+            }}
+          />
+        </Container>
       </Container>
 
       <Container type="wrapper-pillars">
-        <Container type="reset-wrapper">
+        {/* <Container type="reset-wrapper">
           <MdOutlineRestartAlt onClick={algoRunning ? () => {} : reset} />
-        </Container>
+        </Container> */}
 
         {values.map((val, k) => {
           return <Bar height={val.height} bg_color={val.bg_color} key={k} />;

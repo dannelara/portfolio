@@ -15,15 +15,13 @@ export const Container = styled.div<Props>`
       display: "flex",
       //   backgroundColor: props.theme.colors.bg_cover_dark,
       justifyContent: "center",
+      gap: 20,
       flexWrap: "wrap",
-      gap: "50px",
     }}
 
   ${(props) =>
     props.type === "wrapper-pillars" && {
-      marginTop: "5%",
-      position: "relative",
-      width: "60%",
+      width: "50%",
       maxWidth: "50%",
 
       height: "auto",
@@ -63,13 +61,6 @@ export const Container = styled.div<Props>`
       color: "white",
       cursor: "pointer",
       padding: "0 2px 2px",
-    }}
-    
-   ${(props) =>
-    props.type === "reset-wrapper" && {
-      position: "absolute",
-      top: -40,
-      right: 0,
       "> svg": {
         transition: "1s",
         color: "white",

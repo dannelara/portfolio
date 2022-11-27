@@ -37,7 +37,7 @@ export const Container = styled.div<Props>`
       marginBottom: "25px",
 
       backgroundBlendMode: "multiply",
-      " @media (max-width: 1050px)": {
+      "@media (max-width: 1050px)": {
         width: "95%",
         height: "250px",
       },
@@ -70,19 +70,6 @@ export const Container = styled.div<Props>`
       width: "100vw",
       backgroundColor: props.theme.colors.bg_cover_dark,
       animation: "grow_big 0.5s forwards",
-
-      // position: "absolute",
-      // top: 0,
-      // left: 0,
-      // right: 0,
-      // bottom: 0,
-      // height: "100vh",
-      // animation: "grow_big 0.5s forwards",
-      // margin: "auto auto",
-      // zIndex: 100,
-      // backgroundColor: props.theme.colors.bg_cover_dark,
-      // justifyContent: "center",
-      // flexWrap: "wrap",
     }}
 
     ${(props) =>
@@ -115,7 +102,6 @@ export const Container = styled.div<Props>`
     ${(props) =>
     props.type === "top" && {
       display: "flex",
-      // top: 0,
       width: "auto",
       gap: "10px",
       ":last-child": {
@@ -131,7 +117,11 @@ export const Container = styled.div<Props>`
       top: 0,
       width: "100%",
       gap: "10px",
-      height: "auto",
+      height: "70%",
       maxHeight: "70%",
+
+      "@media (max-width: 400px)": {
+        alignItems: "start",
+      },
     }}
 `;
