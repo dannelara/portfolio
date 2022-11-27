@@ -72,7 +72,7 @@ export const Card: React.FC<CardProps> = ({ title, desc, bg_image }) => {
           </Container>
 
           <Container type="content">
-            <SortingVisualizer cnt={100} />
+            <SortingVisualizer cnt={50} />
           </Container>
         </Container>
       </Container>

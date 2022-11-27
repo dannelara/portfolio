@@ -3,7 +3,9 @@ import { Span } from "../../../../utils";
 import { Container } from "./Styles";
 import { MdOutlineRestartAlt } from "react-icons/md";
 import { Bar } from "./bar/Bar";
+
 const PRIMARY_COLOR = "white";
+const SECONDARY_COLOR = "red";
 
 interface SortingVisualizerProps {
   cnt: number;
@@ -27,10 +29,11 @@ export const SortingVisualizer: React.FC<SortingVisualizerProps> = ({
 
   const setUp = () => {
     for (let i = 0; i < cnt; i++) {
+      const val = Math.floor(Math.random() * 500);
       setValues((old) => [
         ...old,
         {
-          height: Math.floor(Math.random() * 500),
+          height: val,
           bg_color: PRIMARY_COLOR,
         },
       ]);
@@ -45,6 +48,8 @@ export const SortingVisualizer: React.FC<SortingVisualizerProps> = ({
 
   useEffect(() => {
     setUp();
+
+    console.log(values.length);
   }, []);
 
   return (
