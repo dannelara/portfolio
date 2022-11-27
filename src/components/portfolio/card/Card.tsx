@@ -6,7 +6,7 @@ import { GlobalStateContext } from "../../../global/GlobalState";
 import { FcNext } from "react-icons/fc";
 import { FcPrevious } from "react-icons/fc";
 import { AiOutlineClose } from "react-icons/ai";
-import { AlgoView } from "./algoView/AlgoView";
+import { SortingVisualizer } from "./algoView/SortingVisualizer";
 
 interface CardProps {
   title: string;
@@ -72,7 +72,7 @@ export const Card: React.FC<CardProps> = ({ title, desc, bg_image }) => {
           </Container>
 
           <Container type="content">
-            <AlgoView height={500} width={400} cnt={100} />
+            <SortingVisualizer cnt={100} />
           </Container>
         </Container>
       </Container>

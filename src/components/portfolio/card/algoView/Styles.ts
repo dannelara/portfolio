@@ -72,15 +72,5 @@ export const Container = styled.div<Props>`
           transform: "rotate(-360deg)",
         },
       },
-    }} 
-
-  ${(props) =>
-    props.type === "pillar" && {
-      width: "5px",
-      "@media screen and (max-width: 800px)": {
-        width: "1%",
-      },
-      height: `${props.height}px`,
-      backgroundColor: props.bg_color,
     }}
 `;
