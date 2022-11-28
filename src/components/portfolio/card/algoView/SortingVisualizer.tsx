@@ -56,7 +56,7 @@ export const SortingVisualizer: React.FC<SortingVisualizerProps> = ({
       ) as HTMLCollectionOf<HTMLElement>
     );
 
-    await ALGOS.insert_sort(arrayBars, cnt, 30, PRIMARY_COLOR, SECONDARY_COLOR);
+    await ALGOS.quick_sort(arrayBars, cnt, 30, PRIMARY_COLOR, SECONDARY_COLOR);
     setAlgoRunning(false);
   };
 
