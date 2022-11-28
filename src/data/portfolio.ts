@@ -12,16 +12,16 @@ const data: Data[] = [
     desc: "tdesc",
     bg_image: bg_image,
   },
-  {
-    title: "Projects",
-    desc: "tdesc",
-    bg_image: bg_image,
-  },
-  {
-    title: "IOT",
-    desc: "tdesc",
-    bg_image: iot_image,
-  },
+  // {
+  //   title: "Projects",
+  //   desc: "tdesc",
+  //   bg_image: bg_image,
+  // },
+  // {
+  //   title: "IOT",
+  //   desc: "tdesc",
+  //   bg_image: iot_image,
+  // },
 ];
 
 export default data;

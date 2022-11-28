@@ -1,6 +1,8 @@
 import styled from "styled-components";
 interface Props {
   type: string;
+  focus?: Boolean;
+  className?: string;
 }
 
 export const StyledSpan = styled.span<Props>`
@@ -112,5 +114,28 @@ export const StyledSpan = styled.span<Props>`
       //   cursor: "pointer",
       // },
       // color: props.theme.colors.content_title,
+    }}
+
+    ${(props) =>
+    props.type === "controll" && {
+      height: "100%",
+      width: "100%",
+      padding: "0 2px 2px",
+      textAlign: "center",
+      display: "flex",
+      alignItems: "center",
+      backgroundColor: props.focus ? "white" : "",
+      color: props.focus ? "black" : "",
+    }}
+    ${(props) =>
+    props.type === "span-controll" && {
+      height: "100%",
+      width: "100%",
+      padding: "0 2px 2px",
+      textAlign: "center",
+      display: "flex",
+      alignItems: "center",
+      backgroundColor: props.focus ? "white" : "",
+      color: props.focus ? "black" : "",
     }}
 `;

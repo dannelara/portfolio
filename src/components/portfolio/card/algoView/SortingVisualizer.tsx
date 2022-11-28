@@ -2,8 +2,8 @@ import React, { useRef, useEffect, useState } from "react";
 import { Span } from "../../../../utils";
 import { Container } from "./Styles";
 import { MdOutlineRestartAlt } from "react-icons/md";
-import { Bar } from "./bar/Bar";
-import * as ALGOS from "../algorithms/algorithms";
+import { Bar } from "../../algorithmView/bar/Bar";
+import * as ALGOS from "../../../../utils/algorithms/algorithms";
 
 const PRIMARY_COLOR = "white";
 const SECONDARY_COLOR = "GREEN";
@@ -19,7 +19,6 @@ interface BarProps {
 export const SortingVisualizer: React.FC<SortingVisualizerProps> = ({
   cnt,
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const [algoRunning, setAlgoRunning] = useState(false);
   const [values, setValues] = useState<BarProps[]>([]);
 
@@ -56,7 +55,8 @@ export const SortingVisualizer: React.FC<SortingVisualizerProps> = ({
       ) as HTMLCollectionOf<HTMLElement>
     );
 
-    await ALGOS.quick_sort(arrayBars, cnt, 30, PRIMARY_COLOR, SECONDARY_COLOR);
+    // await ALGOS.quick_sort(arrayBars, PRIMARY_COLOR, SECONDARY_COLOR, 50);
+    // await ALGOS.insert_sort(arrayBars, 35, 50, PRIMARY_COLOR, SECONDARY_COLOR);
     setAlgoRunning(false);
   };
 
@@ -65,12 +65,10 @@ export const SortingVisualizer: React.FC<SortingVisualizerProps> = ({
   }, []);
 
   return (
-    <Container type="wrapper" ref={containerRef}>
+    <Container type="wrapper">
       <Container type="controll-wrapper">
         <Container type="controll">
-          <Span type="" onClick={algoRunning ? async () => {} : start}>
-            Start
-          </Span>
+          <Span type="">Start</Span>
         </Container>
         <Container type="controll">
           <Span type="">Code</Span>

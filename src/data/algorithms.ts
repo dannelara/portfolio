@@ -278,7 +278,7 @@ enum ALGO {
 
 const data: Data[] = [
   { title: "Insert sort", enum: ALGO.INSERT_SORT },
-  // { title: "tbd", enum: ALGO.QUICK_SORT },
+  { title: "Quick sort", enum: ALGO.QUICK_SORT },
 ];
 
 export default data;
