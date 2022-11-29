@@ -46,7 +46,7 @@ const get_median = (
   return parseInt(items[Math.floor((right + left) / 2)].style.height);
 };
 
-const swap = async (
+const swap = (
   items: HTMLElement[],
   left: number,
   right: number,
@@ -56,12 +56,8 @@ const swap = async (
 ) => {
   let temp = items[left].style.height;
   items[left].style.height = items[right].style.height;
-  // items[left].style.backgroundColor = SECONDARY;
 
   items[right].style.height = temp;
-  await sleep(delay * 1.5);
-  // items[left].style.backgroundColor = PRIMARY;
-  // await sleep(delay);
 };
 
 const partition = async (
@@ -91,7 +87,8 @@ const partition = async (
       items[j].style.backgroundColor = PRIMARY;
     }
     if (i <= j) {
-      await swap(items, i, j, delay, PRIMARY, SECONDARY);
+      swap(items, i, j, delay, PRIMARY, SECONDARY);
+      await sleep(delay * 1.5);
       i++;
       j--;
     }
@@ -105,7 +102,7 @@ export const quick_sort = async (
   PRIMARY: string,
   SECONDARY: string
 ) => {
-  _quick_sort(items, 0, items.length - 1, PRIMARY, SECONDARY, delay);
+  await _quick_sort(items, 0, items.length - 1, PRIMARY, SECONDARY, delay);
 };
 
 const _quick_sort = async (
@@ -121,11 +118,11 @@ const _quick_sort = async (
   if (items.length > 1) {
     index = await partition(items, left, right, PRIMARY, SECONDARY, delay);
     if (left < index - 1) {
-      _quick_sort(items, left, index - 1, PRIMARY, SECONDARY, delay);
+      await _quick_sort(items, left, index - 1, PRIMARY, SECONDARY, delay);
     }
 
     if (index < right) {
-      _quick_sort(items, index, right, PRIMARY, SECONDARY, delay);
+      await _quick_sort(items, index, right, PRIMARY, SECONDARY, delay);
     }
   }
 };
