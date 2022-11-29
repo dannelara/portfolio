@@ -114,6 +114,27 @@ export const AlgorithmsVisualizer: React.FC<AlgorithmsVisualizerProps> = ({
   return (
     <Container type="wrapper">
       <Container type="controll-wrapper">
+        {algoData.map((algo, k) => (
+          <Container type="controll" key={k}>
+            <Span
+              type="span-controll"
+              id={`${algo.enum}`}
+              focus={k === 0 ? true : false}
+              onClick={onAlgoChange}
+              className="span-controll"
+            >
+              {algo.title}
+            </Span>
+          </Container>
+        ))}
+      </Container>
+      <Container type="wrapper-pillars">
+        {values.map((val, k) => {
+          return <Bar height={val.height} bg_color={val.bg_color} key={k} />;
+        })}
+      </Container>
+
+      <Container type="controll-wrapper">
         <Container type="controll">
           <Span type="controll" onClick={start}>
             Start
@@ -130,26 +151,6 @@ export const AlgorithmsVisualizer: React.FC<AlgorithmsVisualizerProps> = ({
             }}
           />
         </Container>
-      </Container>
-      <Container type="wrapper-pillars">
-        {values.map((val, k) => {
-          return <Bar height={val.height} bg_color={val.bg_color} key={k} />;
-        })}
-      </Container>
-      <Container type="controll-wrapper">
-        {algoData.map((algo, k) => (
-          <Container type="controll" key={k}>
-            <Span
-              type="span-controll"
-              id={`${algo.enum}`}
-              focus={k === 0 ? true : false}
-              onClick={onAlgoChange}
-              className="span-controll"
-            >
-              {algo.title}
-            </Span>
-          </Container>
-        ))}
       </Container>
     </Container>
   );
