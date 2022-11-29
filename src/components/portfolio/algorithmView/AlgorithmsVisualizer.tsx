@@ -53,7 +53,6 @@ export const AlgorithmsVisualizer: React.FC<AlgorithmsVisualizerProps> = ({
   };
 
   const reset = () => {
-    console.log(active);
     if (!active) {
       setUp();
     }
@@ -64,7 +63,6 @@ export const AlgorithmsVisualizer: React.FC<AlgorithmsVisualizerProps> = ({
       // FIX THIS!!!
       setActive((prev) => (prev = true));
 
-      console.log(active);
       // Get bars from document.
       const arrayBars = Array.from(
         document.getElementsByClassName(
