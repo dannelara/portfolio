@@ -19,6 +19,9 @@ export const Container = styled.div<Props>`
 
         bottom: 0,
       },
+      "@media screen and (max-width: 450px)": {
+        display: "none",
+      },
     }}
 
   ${(props) =>
