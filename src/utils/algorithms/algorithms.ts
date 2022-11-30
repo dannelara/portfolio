@@ -2,6 +2,19 @@ const sleep = (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
 
+const swap = (
+  items: HTMLElement[],
+  left: number,
+  right: number,
+  delay: number,
+  PRIMARY: string,
+  SECONDARY: string
+) => {
+  let temp = items[left].style.height;
+  items[left].style.height = items[right].style.height;
+  items[right].style.height = temp;
+};
+
 /**Insert sort */
 export const insert_sort = async (
   vals: HTMLElement[],
@@ -44,20 +57,6 @@ const get_median = (
   right: number
 ): number => {
   return parseInt(items[Math.floor((right + left) / 2)].style.height);
-};
-
-const swap = (
-  items: HTMLElement[],
-  left: number,
-  right: number,
-  delay: number,
-  PRIMARY: string,
-  SECONDARY: string
-) => {
-  let temp = items[left].style.height;
-  items[left].style.height = items[right].style.height;
-
-  items[right].style.height = temp;
 };
 
 const partition = async (
@@ -124,5 +123,78 @@ const _quick_sort = async (
     if (index < right) {
       await _quick_sort(items, index, right, PRIMARY, SECONDARY, delay);
     }
+  }
+};
+
+/**
+ * HEAP SORT
+ */
+
+let offset = 0;
+let last = 0;
+
+const sink = (
+  items: HTMLElement[],
+  index: number,
+  length: number,
+  delay: number,
+  PRIMARY: string,
+  SECONDARY: string
+) => {
+  let left = 2 * index;
+  let right = 2 * index + 1;
+  let maximum;
+  if (right < length) {
+    if (
+      parseInt(`${items[left].style.height}`) >=
+      parseInt(`${items[right].style.height}`)
+    ) {
+      maximum = left;
+    } else {
+      maximum = right;
+    }
+  } else if (left < length) {
+    maximum = left;
+  } else {
+    return;
+  }
+  if (
+    parseInt(`${items[index].style.height}`) <
+    parseInt(`${items[maximum].style.height}`)
+  ) {
+    swap(items, index, maximum, delay, PRIMARY, SECONDARY);
+    sink(items, maximum, length, delay, PRIMARY, SECONDARY);
+  }
+};
+
+export const heap_sort = async (
+  items: HTMLElement[],
+  delay: number,
+  PRIMARY: string,
+  SECONDARY: string
+) => {
+  let start = 0;
+  offset = start;
+  last = items.length - 1;
+
+  let k = Math.floor((last - start) / 2);
+
+  while (k >= 0) {
+    sink(items, k, last, delay, PRIMARY, SECONDARY);
+    k--;
+
+    await sleep(delay);
+  }
+  await sleep(delay * 10);
+
+  while (last >= start) {
+    let temp = items[start].style.height;
+    items[start].style.height = items[last].style.height;
+
+    items[last].style.height = temp;
+
+    sink(items, 0, last, delay, PRIMARY, SECONDARY);
+    last--;
+    await sleep(delay);
   }
 };

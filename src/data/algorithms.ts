@@ -274,11 +274,13 @@ interface Data {
 enum ALGO {
   INSERT_SORT,
   QUICK_SORT,
+  HEAP_SORT,
 }
 
 const data: Data[] = [
-  { title: "Insert sort", enum: ALGO.INSERT_SORT },
+  { title: "Heap sort", enum: ALGO.HEAP_SORT },
   { title: "Quick sort", enum: ALGO.QUICK_SORT },
+  { title: "Insert sort", enum: ALGO.INSERT_SORT },
 ];
 
 export default data;
