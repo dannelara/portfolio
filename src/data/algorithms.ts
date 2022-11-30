@@ -272,9 +272,9 @@ interface Data {
 }
 
 enum ALGO {
-  INSERT_SORT,
-  QUICK_SORT,
   HEAP_SORT,
+  QUICK_SORT,
+  INSERT_SORT,
 }
 
 const data: Data[] = [

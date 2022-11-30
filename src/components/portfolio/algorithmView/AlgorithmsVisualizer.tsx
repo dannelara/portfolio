@@ -14,9 +14,9 @@ interface Data {
 }
 
 enum ALGO {
-  INSERT_SORT,
-  QUICK_SORT,
   HEAP_SORT,
+  QUICK_SORT,
+  INSERT_SORT,
 }
 
 interface AlgorithmsVisualizerProps {
@@ -71,9 +71,14 @@ export const AlgorithmsVisualizer: React.FC<AlgorithmsVisualizerProps> = ({
         ) as HTMLCollectionOf<HTMLElement>
       );
 
-      console.log(algo);
       switch (algo) {
         case 0:
+          await ALGOS.heap_sort(arrayBars, 30, PRIMARY_COLOR, SECONDARY_COLOR);
+          break;
+        case 1:
+          await ALGOS.quick_sort(arrayBars, 30, PRIMARY_COLOR, SECONDARY_COLOR);
+          break;
+        case 2:
           await ALGOS.insert_sort(
             arrayBars,
             30,
@@ -81,11 +86,6 @@ export const AlgorithmsVisualizer: React.FC<AlgorithmsVisualizerProps> = ({
             SECONDARY_COLOR
           );
           break;
-        case 1:
-          await ALGOS.quick_sort(arrayBars, 30, PRIMARY_COLOR, SECONDARY_COLOR);
-          break;
-        case 2:
-          await ALGOS.heap_sort(arrayBars, 30, PRIMARY_COLOR, SECONDARY_COLOR);
           break;
         default:
           break;
